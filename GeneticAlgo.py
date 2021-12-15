@@ -78,7 +78,7 @@ while not match:
   if population[0]['fitness'] <= 15000:
     newImg = Image.new("RGB", (32, 32), "white")
     image = ImageDraw.Draw(newImg, 'RGBA')
-    for ordinates in gnome:
+    for ordinates in population[0]['gnome']:
       image.rectangle(ordinates, (105,105,105,125))
     newImg.show()
     match = 1
