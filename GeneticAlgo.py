@@ -75,13 +75,12 @@ for gnome in gnomes:
 while not match:
   population = sorted(population, key= itemgetter('fitness'))
   print("Least loss for gen " + str(gen) + " - " + str(population[0]['fitness']))
-  if gen % 100 == 0 or gen == 1:
+  if population[0]['fitness'] <= 15000:
     newImg = Image.new("RGB", (32, 32), "white")
     image = ImageDraw.Draw(newImg, 'RGBA')
     for ordinates in gnome:
       image.rectangle(ordinates, (105,105,105,125))
     newImg.show()
-  if population[0]['fitness'] <= 15000:
     match = 1
   newGen = [gnome for gnome in population[:10]]
   for i in range(90):
